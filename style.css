@@ -38,6 +38,11 @@ span {
     color: orangered;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
 .navbar a {
     font-size: 18px;
     color: white;
@@ -71,6 +76,13 @@ span {
     color: white;
 }
 
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+}
+
 .home {
     width: 100%;
     min-height: 100vh;
@@ -78,7 +90,7 @@ span {
     display: flex;
     align-items: center;
     gap: 7em;
-    padding: 30px 12% 0;
+    padding: 130px 12% 0; /* Adjusted for header height */
 }
 
 .home-content {
@@ -95,7 +107,7 @@ span {
     line-height: 1.2;
 }
 
-.home-content {
+.home-content p {
     font-size: 18px;
     margin: 25px 0 30px;
 }
@@ -142,7 +154,8 @@ span {
 
 .img-box img {
     border-radius: 50%;
-    width: 550px;
+    width: 100%;
+    max-width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -165,12 +178,6 @@ span {
     padding: 12% 8%;
     gap: 10em;
     background: black;
-}
-
-.about-img img {
-    width: 550px;
-    box-shadow: 0 0 25px orangered, 0 0 50px orangered;
-    border-radius: 50%;
 }
 
 .about-content {
@@ -299,7 +306,28 @@ span {
     }
 
     .navbar {
-        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        transform: translateY(-200%);
+        transition: transform 0.5s ease;
+    }
+
+    .navbar.active {
+        transform: translateY(0);
+    }
+
+    .navbar a {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .home, .about {
@@ -353,21 +381,18 @@ html {
         transform: translateY(0);
     }
 }
-#visit{
-    text-align: center;
-}
-.map-wrapper {
+#tools {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto; /* Center the container and add some margin */
-    width: 100%;
-    max-width: 300px; /* Set a maximum width for the map */
+    justify-content: center; /* Center vertically if the section has height */
+    text-align: center;
+    padding: 20px 0;
 }
 
 #map-container {
     width: 100%;
+    max-width: 800px; /* Adjust the max-width as needed */
     height: 450px;
     border: 0;
 }
-

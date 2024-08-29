@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
         <a href="#landing" class="logo"><span>Kev</span>in</a>
@@ -17,8 +21,12 @@
             <a href="#contact">Contact</a>
             <a href="#tools">Tools</a>
         </nav>
+        <div class="menu-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
         <a href="#contact" class="contact">Contact Me</a>
     </header>
+
     <section id="landing" class="home">
         <div class="home-content">
             <h3>Hi</h3>
@@ -35,7 +43,7 @@
 
     <section id="projects" class="about">
         <div class="about-img">
-            <img src="./image/kevin.png" alt="experience Image">
+            <img src="./image/kevin.png" alt="Experience Image">
         </div>
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
@@ -50,22 +58,22 @@
         <h2 class="contact-me">Contact <span>Me</span></h2>
         <form action="#">
             <div class="input-box">
-                <input type="text" name="fullName">           
-                <input type="email" name="email">
+                <input type="text" name="fullName" placeholder="Full Name">
+                <input type="email" name="email" placeholder="Email">
             </div>
             <div class="input-box">
-                <input type="number" name="phoneNumber">           
-                <input type="text" name="subject">
+                <input type="number" name="phoneNumber" placeholder="Phone Number">
+                <input type="text" name="subject" placeholder="Subject">
             </div>
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send message" class="btn-1">
         </form>
     </section>
 
     <section id="tools">
         <h4 class="text-center text-white mb-3" id="visit">Visit Us</h4>
-        <iframe id="map-container" src="https://www.google.com/maps?q=Your+Location+Here&hl=en-US&z=15&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-    </section>
+        <iframe id="map-container" src="https://www.google.com/maps?q=Your+Location+Here&hl=en-US&z=15&output=embed" frameborder="0" scrolling="no"></iframe>
+    </section>    
 
     <footer class="footer">
         <div class="social">
@@ -83,5 +91,19 @@
         </ul>
         <p class="copyright"> 2023 Kevin | All rights reserved</p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
 </body>
+
 </html>
